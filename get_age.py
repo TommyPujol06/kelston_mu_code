@@ -1,5 +1,4 @@
 import datetime
-import calendar
 
 year = int(input("What year were you born? "))
 month = int(input("What month were you born? "))
