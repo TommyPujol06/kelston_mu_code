@@ -39,7 +39,7 @@ def read_existing_words(words_filepath):
     return words
 
 def write_words(words, words_filepath):
-    with open(words_filepath, "w") as f:
+    with open(words_filepath, "w", encoding="utf-8") as f:
         for word in sorted(words):
             f.write(word + "\n")
 

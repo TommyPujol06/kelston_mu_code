@@ -1,4 +1,9 @@
-correct_word = list("FLOWER")
+import random
+
+with open("words.txt", encoding="utf-8") as f:
+    words = f.read().split()
+chosen_word = random.choice(words)
+correct_word = list(chosen_word)
 guessed_word = ["-" for c in correct_word]
 letters_so_far = set()
 hangman = ""
@@ -23,3 +28,4 @@ if guessed_word == correct_word:
     print("Congratulations; you win!")
 else:
     print("You die!")
+    print("The word was:", chosen_word)
