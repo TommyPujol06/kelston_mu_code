@@ -28,8 +28,32 @@ with a capital letter (There, Eustace, Clarence, Scrubb) or have an apostrophe
 """
 import os, sys
 
-def main(input_filepath, output_filepath="words.txt"):
-    pass
+def get_words_from_text(text):
+    """Take a chunk of text and return a list containing its words
+    """
+    return text.split()
+
+def get_candidate_words(words):
+    """Take a list of words and filters some out
+    """
+    return words
+
+def write_words_to_file(words, filepath):
+    """Take a list of words and write one line at a time to a file
+    """
+    new_file = open(filepath, "w", encoding="utf-8")
+    sorted_words = sorted(set(words))
+    for w in sorted_words:
+        w = w.upper()
+        new_file.write(w + "\n")
+    new_file.close()
+    
+def main(input_filepath="bleak-house.txt", output_filepath="words.txt"):
+    complete_text = open(input_filepath, "r", encoding="utf-8").read()
+    separatewords = get_words_from_text(complete_text)    
+    candidate_words = get_candidate_words(separatewords)
+    write_words_to_file(candidate_words, output_filepath)
+
 
 if __name__ == '__main__':
     main(*sys.argv[1:])
