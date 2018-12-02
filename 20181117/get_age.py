@@ -1,3 +1,5 @@
+"""Ask for someone's date of birth and calculate their age
+"""
 import sys
 import datetime
 
