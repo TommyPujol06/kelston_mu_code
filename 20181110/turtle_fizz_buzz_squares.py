@@ -1,11 +1,18 @@
+"""Use the turtle to visualise a fizz-buzz sequence
+
+The turtle moves one step for each number. If the number is a "fizz"
+number, the turtle draws a yellow square to the left; if it is a "buzz"
+number, the turtle draws an orange square to the right; otherwise it
+just draws a straight line.
+"""
 import turtle
 
 def fizzbuzz(n):
-    results = []
+    results = set()
     if n % 5 == 0:
-        results.append("fizz")
+        results.add("fizz")
     if n % 7 == 0:
-        results.append("buzz")
+        results.add("buzz")
     return results
 
 def square(size, left_or_right, edge_colour, fill_colour):
