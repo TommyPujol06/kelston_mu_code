@@ -26,20 +26,30 @@ which adds to the existing set of words new ones which aren't there yet.
 We used
 ~~~~~~~
 
-* `open <https://docs.python.org/3.6/library/functions.html?highlight=open#open>`_
+* `open <https://docs.python.org/3.6/library/functions.html?highlight=open#open>`_ 
+  to open a file so it could be read or written
 * `read <https://docs.python.org/3.6/library/io.html#io.TextIOBase.read>`_
+  to read the data from a file in one go
 * `write <https://docs.python.org/3.6/library/io.html#io.TextIOBase.write>`_
+  to write words back into a file one line at a time
 * `split <https://docs.python.org/3.6/library/stdtypes.html?highlight=split#str.split>`_
-* `sorted <https://docs.python.org/3.6/library/functions.html?highlight=sorted#sorted>`_
-* `upper <https://docs.python.org/3.6/library/stdtypes.html?highlight=upper#str.upper>`_
+   to split the string containing all the text into a list of individual words
+* `sorted <https://docs.python.org/3.6/library/functions.html?highlight=sorted#sorted>`_ 
+  to take the list of words and return it in alphabetical order
+* `upper <https://docs.python.org/3.6/library/stdtypes.html?highlight=upper#str.upper>`_ 
+  to turn each word into all uppercase (capital letters)
 
 I also mentioned
 ~~~~~~~~~~~~~~~~
 
-* `Asterisk words <https://en.wikipedia.org/wiki/Asterisk#Linguistics>`_
-* `The use of "if __name__ == '__main__'" <https://docs.python.org/3.6/library/__main__.html>`_
+* `Asterisk words <https://en.wikipedia.org/wiki/Asterisk#Linguistics>`_ 
+  which are words that linguists assume might have existed even though they haven't found them
+* `The use of "if __name__ == '__main__'" <https://docs.python.org/3.6/library/__main__.html>`_ 
+  which is how you can have code which happens when a module is run but not when it is imported by another module
 * `Encodings (especially utf-8) <https://unicodebook.readthedocs.io/definitions.html>`_
+  which are how non-English characters are stored so they be read back by other programs
 * `UTF-8 Byte-order mark <https://en.wikipedia.org/wiki/Byte_order_mark>`_
+  which is a pair of bytes at the start of a file to indicate that it's storing UTF-8
 
 ... and also
 ~~~~~~~~~~~~
