@@ -1,3 +1,5 @@
+"""A simple function which will indicate whether a number is a prime or not
+"""
 def is_prime(n):
     #
     # Check every number up to half of the number
