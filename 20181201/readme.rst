@@ -19,8 +19,8 @@ In this session we opened files for reading, read their contents
 as a string, split that string into words, and then stored all those
 words in a file -- having made them uppercase -- in alphabetical order.
 
-We used:
-~~~~~~~~
+We used
+~~~~~~~
 
 * `open <https://docs.python.org/3.6/library/functions.html?highlight=open#open>`_
 * `read <https://docs.python.org/3.6/library/io.html#io.TextIOBase.read>`_
@@ -29,10 +29,16 @@ We used:
 * `sorted <https://docs.python.org/3.6/library/functions.html?highlight=sorted#sorted>`_
 * `upper <https://docs.python.org/3.6/library/stdtypes.html?highlight=upper#str.upper>`_
 
-I also mentioned:
-~~~~~~~~~~~~~~~~~
+I also mentioned
+~~~~~~~~~~~~~~~~
 
 * `Asterisk words <https://en.wikipedia.org/wiki/Asterisk#Linguistics>`_
 * `The use of "if __name__ == '__main__'" <https://docs.python.org/3.6/library/__main__.html>`_
 * `Encodings (especially utf-8) <https://unicodebook.readthedocs.io/definitions.html>`_
 * `UTF-8 Byte-order mark <https://en.wikipedia.org/wiki/Byte_order_mark>`_
+
+... and also
+~~~~~~~~~~~~
+
+* `Linguini <https://github.com/Linguini2004>`_ spotted a bug in the Mu editor and raised 
+  an `issue on the tracker <https://github.com/mu-editor/mu/issues/715>`_.
