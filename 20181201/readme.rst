@@ -19,6 +19,10 @@ In this session we opened files for reading, read their contents
 as a string, split that string into words, and then stored all those
 words in a file -- having made them uppercase -- in alphabetical order.
 
+The program we generated is `here <https://github.com/KelstonClub/kelston_mu_code/blob/master/20181201/generate-words0.py>`_.
+If you want to see something slightly more advanced, there is `a version <https://github.com/KelstonClub/kelston_mu_code/blob/master/20181201/generate-words2.py>`_
+which adds to the existing set of words new ones which aren't there yet.
+
 We used
 ~~~~~~~
 
