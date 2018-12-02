@@ -1,3 +1,5 @@
+"""Working code for the turtle/polygon session
+"""
 import turtle as t
 
 #
