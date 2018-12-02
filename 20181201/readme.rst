@@ -33,7 +33,7 @@ We used
 * `write <https://docs.python.org/3.6/library/io.html#io.TextIOBase.write>`_
   to write words back into a file one line at a time
 * `split <https://docs.python.org/3.6/library/stdtypes.html?highlight=split#str.split>`_
-   to split the string containing all the text into a list of individual words
+  to split the string containing all the text into a list of individual words
 * `sorted <https://docs.python.org/3.6/library/functions.html?highlight=sorted#sorted>`_ 
   to take the list of words and return it in alphabetical order
 * `upper <https://docs.python.org/3.6/library/stdtypes.html?highlight=upper#str.upper>`_ 
