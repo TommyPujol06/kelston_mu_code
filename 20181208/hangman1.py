@@ -36,7 +36,7 @@ def main(words_filepath="words.txt"):
     if guessed_word == correct_word:
         print("You win!")
     else:
-        print"You lose! The word was:", correct_word)
+        print("You lose! The word was:", correct_word)
 
 if __name__ == '__main__':
     main(*sys.argv[1:])
