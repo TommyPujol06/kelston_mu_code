@@ -1,3 +1,6 @@
+"""Construct a function which indicates whether a number is "interesting"
+or not (for some definition of "interesting")
+"""
 def is_interesting(n):
     if n % 3 == 0:
         return True
