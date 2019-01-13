@@ -1,3 +1,12 @@
+"""Draw different polygons ending with a general-purpose polygon function
+
+Draw triangle then square then pentagon etc. Note how the code of each
+named polygon has a lot in common and then abstract that out to a general-purpose
+polygon function.
+
+Finally (with a view to drawing letters) draw half a polygon of any
+number of sides.
+"""
 import turtle as t
 
 def triangle():
