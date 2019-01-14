@@ -27,10 +27,21 @@ from sys import exit
 
 def write_db(name, age, color):
 	
-	with open("db.txt","a") as db:
+	try:
+		with open("db.txt","a") as db:
 		
-		db.write(name+" "+age+" "+color+"\n")
+			db.write(name+" "+age+" "+color+"\n")
+	except:
 		
+		try:
+			with open("db.txt","w+") as db:
+		
+				db.write(name+" "+age+" "+color+"\n")
+		
+		except:
+			
+			print("[*] Error")
+	
 def read_db(f_name):
 	
 	db = open("db.txt","r")
@@ -54,30 +65,26 @@ def read_db(f_name):
 			print("[+] Found :\n* Name : " + f_name,"\n* Age : " + age + "\n* Favourite color : " + color)
 
 def menu():
-	
-	try:
-		option = int(input("1- Write to DB\n2- Read the DB\n>>>"))	
-		if option == 1:	
-			name = input("Name : ")
-			age = input("Age : ")
-			color = input("Favourite color : ")
 		
-			write_db(name,age,color)			
+	option = int(input("1- Write to DB\n2- Read the DB\n>>>"))	
 	
-		elif option == 2:
-			
-			name = input("Name : ")
+	if option == 1:	
 		
-			read_db(name)	
-	
-		else:
+		name = input("Name : ")
+		age = input("Age : ")
+		color = input("Favourite color : ")
 
-			print("Not A Valid Option")
-			exit()
-			
-	except:
-	
-		print("Must Be Number Not String")
+		write_db(name,age,color)			
+
+	elif option == 2:
+		
+		name = input("Name : ")
+
+		read_db(name)	
+
+	else:
+
+		print("Not A Valid Option")
 		exit()
 	
 if __name__ == "__main__":
