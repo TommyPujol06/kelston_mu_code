@@ -2,3 +2,5 @@ Tommy 12 Red
 Peter 37 Green
 Jhon 14 Yellow
 Miquel 8 Green
+Tommy 19 Blue
+Isabel 11 Turquise

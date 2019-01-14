@@ -55,25 +55,31 @@ def read_db(f_name):
 
 def menu():
 	
-	option = int(input("1- Write to DB\n2- Read the DB\n>>>"))
-	if option == 1:
+	try:
+		option = int(input("1- Write to DB\n2- Read the DB\n>>>"))	
+		if option == 1:	
+			name = input("Name : ")
+			age = input("Age : ")
+			color = input("Favourite color : ")
 		
-		name = input("Name : ")
-		age = input("Age : ")
-		color = input("Favourite color : ")
-		
-		write_db(name,age,color)			
-
-	elif option == 2:
-		
-		name = input("Name : ")
-		
-		read_db(name)	
+			write_db(name,age,color)			
 	
-	else:
+		elif option == 2:
+			
+			name = input("Name : ")
+		
+			read_db(name)	
+	
+		else:
 
-		print("Not A Valid Option")
+			print("Not A Valid Option")
+			exit()
+			
+	except:
+	
+		print("Must Be Number Not String")
 		exit()
-
+	
 if __name__ == "__main__":
 	menu()
+
