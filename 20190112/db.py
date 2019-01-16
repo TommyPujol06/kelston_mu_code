@@ -73,7 +73,8 @@ Else it will say Not Found.
 		if name == f_name:
 			
 			c += 1
-					
+			
+			#return True, data		
 			print("\n[+] Found :\n\n* Name : " + name,"\n* Age : " + age + "\n* Favourite color : " + color + "\n")
 						
 		
@@ -92,9 +93,6 @@ Menu function ask's for an option wich depending on the given answer
 will call a function or another. Also ask's for requirements for the functions.
 	"""
 	option = int(input("1- Write to DB\n2- Read the DB\n>>>"))	
-	
-	if not option:
-		exit()
 
 	if option == 1:	
 		
@@ -106,15 +104,19 @@ will call a function or another. Also ask's for requirements for the functions.
 
 	elif option == 2:
 		
-		name = input("Name : ")
-
-		read_db(name)	
-
+		f_name = input("Name : ")
+		read_db(f_name)
+		
+		#if read_db(f_name):
+			#print(...)
+		#else:
+			#print(...)
+		
 	else:
 
 		print("Not A Valid Option")
 		exit()
 	
 if __name__ == "__main__":
-	menu()
+	exit(menu())
 
