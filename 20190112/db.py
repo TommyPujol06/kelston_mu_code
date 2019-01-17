@@ -26,53 +26,97 @@
 from sys import exit 
 
 def write_db(name, age, color):
+	"""
+Writes the given information to the database / text file.	
+First try to append but if not file detected / found creates the db.
+If can't create file give as output Error.
+	"""
+
+	try:
+		with open("db.txt","a") as db:
+
+			db.write(name+" "+age+" "+color+"\n")
+	except:
+
+		try:
+			with open("db.txt","w+") as db:
+
+				db.write(name+" "+age+" "+color+"\n")
+
+		except:
 	
-	with open("db.txt","a") as db:
-		
-		db.write(name+" "+age+" "+color+"\n")
-		
+			print("[*] Error ")
+	
+
+			
+			
+			
+			
 def read_db(f_name):
+	"""
+The read_db function only gives as output the resolut of the search.
+If db :{
+Tommy 21 Green
+}
+And I am looking for Tommy it will give as output the line in the db.
+Else it will say Not Found.
+	"""
 	
-	db = open("db.txt","r")
+	c = 0
+	db = open("db.txt","r") 
 		
 	for lines in db: 
 
-		name = [lines.split()]
-		name.append(name[0])
+		data = [lines.split()[0],lines.split()[1],lines.split()[2]]
+		name, age, color = data
 		
-		age = lines.split()[1]
-		age = "".join(age)
-		
-		color = lines.split()[2]
-		color = "".join(color)
-				
-		for x in name:
-			continue
+		if name == f_name:
 			
-		if x[0] == f_name:
+			c += 1
+			
+			#return True, data		
+			print("\n[+] Found :\n\n* Name : " + name,"\n* Age : " + age + "\n* Favourite color : " + color + "\n")
 						
-			print("[+] Found :\n* Name : " + f_name,"\n* Age : " + age + "\n* Favourite color : " + color)
-
+		
+		if not name == f_name:
+			
+			if c <= 1:
+				pass
+				
+			else:
+				print("\n[*] Not Found ")
+				exit()
+			
 def menu():
-	
-	option = int(input("1- Write to DB\n2- Read the DB\n>>>"))
-	if option == 1:
+	"""
+Menu function ask's for an option wich depending on the given answer
+will call a function or another. Also ask's for requirements for the functions.
+	"""
+	option = int(input("1- Write to DB\n2- Read the DB\n>>>"))	
+
+	if option == 1:	
 		
 		name = input("Name : ")
 		age = input("Age : ")
 		color = input("Favourite color : ")
-		
+
 		write_db(name,age,color)			
 
 	elif option == 2:
 		
-		name = input("Name : ")
+		f_name = input("Name : ")
+		read_db(f_name)
 		
-		read_db(name)	
-	
+		#if read_db(f_name):
+			#print(...)
+		#else:
+			#print(...)
+		
 	else:
 
 		print("Not A Valid Option")
 		exit()
+	
 if __name__ == "__main__":
-	menu()
+	exit(menu())
+
