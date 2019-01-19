@@ -7,8 +7,8 @@
 #  
 #  This program is free software; you can redistribute it and/or modify
 #  it under the terms of the GNU General Public License as published by
-#  the Free Software Foundation; either version 2 of the License, or
-#  (at your option) any later version.
+#  the Free Software Foundation; either version 3 of the License, or
+#  any later version.
 #  
 #  This program is distributed in the hope that it will be useful,
 #  but WITHOUT ANY WARRANTY; without even the implied warranty of
@@ -26,77 +26,75 @@
 from sys import exit 
 
 def write_db(name, age, color):
-	"""
-Writes the given information to the database / text file.	
-First try to append but if not file detected / found creates the db.
-If can't create file give as output Error.
+	"""Writes the given information to the database / text file.	
+	If can't create file give as output Error.
 	"""
 
 	try:
 		with open("db.txt","a") as db:
 
-			db.write(name+" "+age+" "+color+"\n")
-	except:
+			db.write(name+" "+age+" "+color+"\n")			
 
-		try:
-			with open("db.txt","w+") as db:
+	except OSError:
 
-				db.write(name+" "+age+" "+color+"\n")
+		print("\n[*] Error\n")
 
-		except:
-	
-			print("[*] Error ")
-	
-
-			
-			
-			
 			
 def read_db(f_name):
-	"""
-The read_db function only gives as output the resolut of the search.
-If db :{
-Tommy 21 Green
-}
-And I am looking for Tommy it will give as output the line in the db.
-Else it will say Not Found.
+	"""The read_db function only gives as output the resolut of the search.
+	If db :{
+	Tommy 21 Green
+	}
+	And I am looking for Tommy it will give as output the line in the db.
+	Else it will say Not Found.
+
+	C = Counter. The counter is used to 'know' if there are more than one person 
+	with the same name. If not that it will say Not Found for every line with no 
+	person found. 
 	"""
 	
 	c = 0
-	db = open("db.txt","r") 
+	
+	with open("db.txt","r") as db:
 		
-	for lines in db: 
+		for lines in db: 
 
-		data = [lines.split()[0],lines.split()[1],lines.split()[2]]
-		name, age, color = data
+			name, age, color = lines.split()
 		
-		if name == f_name:
+			if name == f_name:
 			
-			c += 1
-			
-			#return True, data		
-			print("\n[+] Found :\n\n* Name : " + name,"\n* Age : " + age + "\n* Favourite color : " + color + "\n")
+				c += 1
+					
+				print("\n[+] Found :\n\n* Name : " + name,"\n* Age : " + age + "\n* Favourite color : " + color + "\n")
 						
 		
-		if not name == f_name:
+			if not name == f_name:
 			
-			if c <= 1:
-				pass
+				if c <= 1:
+					pass
 				
-			else:
-				print("\n[*] Not Found ")
-				exit()
+				else:
+					print("\n[*] Not Found ")
+					exit()
 			
 def menu():
+	"""Menu function ask's for an option wich depending on the given answer
+	will call a function or another. Also ask's for requirements for the functions.
 	"""
-Menu function ask's for an option wich depending on the given answer
-will call a function or another. Also ask's for requirements for the functions.
-	"""
-	option = int(input("1- Write to DB\n2- Read the DB\n>>>"))	
+	
+	try:
 
+		option = int(input("1- Write to DB\n2- Read the DB\n>>>"))	
+
+		
+	except ValueError:
+		
+		print("\nMust Be Only A Number")
+		exit()
+	
 	if option == 1:	
 		
-		name = input("Name : ")
+		name = input("\nName : ")
 		age = input("Age : ")
 		color = input("Favourite color : ")
 
@@ -104,18 +102,14 @@ will call a function or another. Also ask's for requirements for the functions.
 
 	elif option == 2:
 		
-		f_name = input("Name : ")
+		f_name = input("\nName : ")
 		read_db(f_name)
-		
-		#if read_db(f_name):
-			#print(...)
-		#else:
-			#print(...)
 		
 	else:
 
-		print("Not A Valid Option")
+		print("\nNot A Valid Option")
 		exit()
+	
 	
 if __name__ == "__main__":
 	exit(menu())
