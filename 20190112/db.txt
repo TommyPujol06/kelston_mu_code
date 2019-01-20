@@ -2,3 +2,7 @@ Tommy 12 Blue
 Peter 21 Green
 John  89 Black
 Tommy 13 Green
+Louis 35 Red
+Laura 23 Pink
+Ruth 65 Purple
+Pablo 96 Yellow
