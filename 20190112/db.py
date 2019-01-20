@@ -44,16 +44,19 @@ def read_db(f_name):
 	"""The read_db function only gives as output the resolut of the search.
 	If db :{
 	Tommy 21 Green
+	Peter 48 Blue
+	John 15 Red
 	}
 	And I am looking for Tommy it will give as output the line in the db.
 	Else it will say Not Found.
 
-	C = Counter. The counter is used to 'know' if there are more than one person 
-	with the same name. If not that it will say Not Found for every line with no 
-	person found. 
+	not_found : If there are more than one resoults and we don't want to 
+	say Not Found for every line that doesn't match with the input we'll 
+	say if there is at least one resoult we'll keep searching but without Not 
+	Found.
 	"""
 	
-	c = 0
+	not_found = True
 	
 	with open("db.txt","r") as db:
 		
@@ -63,19 +66,14 @@ def read_db(f_name):
 		
 			if name == f_name:
 			
-				c += 1
+				not_found = False
 					
 				print("\n[+] Found :\n\n* Name : " + name,"\n* Age : " + age + "\n* Favourite color : " + color + "\n")
 						
 		
-			if not name == f_name:
-			
-				if c <= 1:
-					pass
-				
-				else:
-					print("\n[*] Not Found ")
-					exit()
+			if not_found:
+				print("\n[*] Not Found ")
+				exit()
 			
 def menu():
 	"""Menu function ask's for an option wich depending on the given answer
