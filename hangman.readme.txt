@@ -1,0 +1,18 @@
+We want a game of hangman where the computer selects a word of a chosen
+length (to offer the user a "difficulty" rating) and then the user tries
+to guess the word in the usual way:
+
+* User chooses a letter
+* If the letter matches one (or more) in the word, those letters are filled in
+* If the letter doesn't match one in the word, a section of the scaffold/hangman is drawn
+* If the word is complete, the user wins
+* If the hangman is complete the computer wins
+
+We've split into three modules partly so it can be implemented by three
+people / teams, but also to emphasise the notion of decoupling -- one module
+doesn't know what the other modules are doing. Only the controller "hangman"
+module passes things around.
+
+Also, although the intention is to have the drawing module do something more
+or less sophisticated in Turtle or tkinter or whatever, the code will work if
+it just writes out "print" statements to the screen.
