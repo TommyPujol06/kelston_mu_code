@@ -9,16 +9,16 @@ def read_possible_words():
 			
 			separate_words = lines.split()
 		
-		return separate_words 
+		return separate_words
 	
-	raise NotImplementedError
 	
 		
 def pick_a_word(words, n_letters=7):
-    """Return a random word of the preferred length
+    """Return a random word from the list of words
+    of the preferred length
     """
     #print("I don't do anything yet")
-
+    return random.choice([w for w in words if len(w) == n_letters])
 	if len(words) == n_letters:
 		
 		return words
