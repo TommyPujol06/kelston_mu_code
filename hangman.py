@@ -2,8 +2,8 @@ import hangman_screen
 import hangman_words
 
 #
-# Ask the user for a difficulty level (length of word)
 # Read a list of words
+# Ask the user for a difficulty level (length of word)
 # Pick a random one
 # Loop until you win or you lose
 #   Draw the current position

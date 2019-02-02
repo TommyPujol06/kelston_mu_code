@@ -2,6 +2,7 @@ def read_possible_words():
     """Return a list of words read from a file
     """
     print("I don't do anything yet")
+    raise NotImplementedError
 
 def pick_a_word(words, n_letters=7):
     """Return a random word of the preferred length
