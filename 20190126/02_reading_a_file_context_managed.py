@@ -1,6 +1,6 @@
 import os
-os.chdir(r"C:\Users\tim\work-in-progress\kelston_mu_code\20190126")
+HERE = os.path.dirname(__file__)
 
-with open("high_scores.csv", "r") as f:
+with open(os.path.join(HERE, "high_scores.csv"), "r") as f:
     for line in f:
         print(line)
