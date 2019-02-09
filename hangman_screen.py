@@ -6,7 +6,70 @@ def draw_word(word_so_far):
     pass
     
 def draw_hangman(failed_letters):
-    pass
+    Letters = len(failed_letters)
+    
+    t.speed(4)
+    t.pensize(6)
+    t.penup()
+    t.right(90)
+    t.forward(100)
+    t.pencolor("saddle brown")
+
+    if Letters >= 1:
+        t.pendown()
+        t.right(90)
+        t.forward(100)
+    
+    if Letters >= 2:
+        t.right(90)
+        t.forward(200)
+
+    if Letters >= 3:
+        t.right(90)
+        t.forward(200)
+    
+    if Letters >= 4:
+        t.left(180)
+        t.forward(150)
+        t.left(45)
+        t.forward(70)
+        t.right(180)
+        t.forward(70)
+        t.right(45)
+        t.forward(50)
+
+    if Letters >= 5:
+        t.pencolor("sandy brown")
+        t.right(90)
+        t.forward(50)
+
+    if Letters >= 6:
+        t.pencolor("firebrick3")
+        t.circle(10)
+    
+    if Letters >= 7:
+        t.forward(55)
+    
+    if Letters >= 8:
+        t.right(45)
+        t.forward(25)
+        t.left(180)
+        t.forward(25)
+    
+    if Letters >= 9:
+        t.right(90)
+        t.forward(25)
+        t.left(180)
+        t.forward(25)
+    
+    if Letters >= 10:
+        t.right(45)
+        t.forward(25)
+        t.right(90)
+        t.forward(25)
+        t.left(180)
+        t.forward(50)
+
     
 def draw(word_so_far, failed_letters):
     """Draw the word so far and the hangman
@@ -19,53 +82,6 @@ def draw(word_so_far, failed_letters):
     t.reset()
     draw_word(word_so_far)
     draw_hangman(failed_letters)
-
-t.speed(4)
-t.pensize(6)
-t.penup()
-t.right(90)
-t.forward(100)
-t.pencolor("saddle brown")
-
-t.pendown()
-t.right(90)
-t.forward(100)
-t.right(90)
-t.forward(200)
-
-t.right(90)
-t.forward(200)
-t.left(180)
-t.forward(150)
-t.left(45)
-t.forward(70)
-t.right(180)
-t.forward(70)
-
-t.right(45)
-t.forward(50)
-
-t.pencolor("sandy brown")
-t.right(90)
-t.forward(50)
-
-t.pencolor("firebrick3")
-t.circle(10)
-t.forward(55)
-t.right(45)
-t.forward(25)
-t.left(180)
-t.forward(25)
-t.right(90)
-t.forward(25)
-t.left(180)
-t.forward(25)
-t.right(45)
-t.forward(25)
-t.right(90)
-t.forward(25)
-t.left(180)
-t.forward(50)
 
 
 def get_a_letter():
@@ -80,3 +96,5 @@ def get_difficulty():
     """Return a number showing how difficult
     """
     return int(t.textinput("Hangman", "How difficult?"))
+
+draw_hangman(list("Peppermint"))
