@@ -3,15 +3,21 @@ import turtle as t
 NUMBER_TO_FAIL = 10
 
 def draw_word(word_so_far):
-    pass
+    t.penup()
+    t.setpos(50,225)
+    t.write("Happy", font=("Arial", 28, "normal"))
     
 def draw_hangman(failed_letters):
     Letters = len(failed_letters)
-    
+    t.penup()
+    t.setpos(50,25)
+
     t.speed(4)
     t.pensize(6)
     t.penup()
-    t.right(90)
+    t.left(180)
+    t.forward(150)
+    t.left(90)
     t.forward(100)
     t.pencolor("saddle brown")
 
@@ -97,4 +103,4 @@ def get_difficulty():
     """
     return int(t.textinput("Hangman", "How difficult?"))
 
-draw_hangman(list("Peppermint"))
+draw(list("Memes"),list("irrelevent") )
