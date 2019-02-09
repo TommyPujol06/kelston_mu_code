@@ -1,6 +1,6 @@
 import os, sys
 sys.path.append(os.path.dirname(__file__))
-import hangman_screen     
+import hangman_screen
 import hangman_words
 alive = True
 word_so_far = []
@@ -12,8 +12,8 @@ correct = False
 word_list = hangman_words.read_possible_words()
 
 # Ask the user for a difficulty level (length of word)
-difficulty = hangman_screen.get_difficuty()
-    
+difficulty = hangman_screen.get_difficulty()
+
 # Pick a random one(giving Tommy values)
 random_word = hangman_words.pick_a_word(word_list, int(difficulty))
 
@@ -21,7 +21,7 @@ random_word = hangman_words.pick_a_word(word_list, int(difficulty))
 word_so_far = ["_"] * difficulty
 while alive == True:
     #   Draw the current position
-    current_pos = hangman_screen.draw(words_so_far, failed_letters)
+    current_pos = hangman_screen.draw(word_so_far, failed_letters)
     #   Ask for a letter
     letter = hangman_screen.get_a_letter()
     #   If the letter is good

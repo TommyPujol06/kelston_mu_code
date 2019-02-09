@@ -5,8 +5,8 @@ NUMBER_TO_FAIL = 10
 def draw_word(word_so_far):
     t.penup()
     t.setpos(50,225)
-    t.write("Happy", font=("Arial", 28, "normal"))
-    
+    t.write(word_so_far, font=("Arial", 28, "normal"))
+
 def draw_hangman(failed_letters):
     Letters = len(failed_letters)
     t.penup()
@@ -25,7 +25,7 @@ def draw_hangman(failed_letters):
         t.pendown()
         t.right(90)
         t.forward(100)
-    
+
     if Letters >= 2:
         t.right(90)
         t.forward(200)
@@ -33,7 +33,7 @@ def draw_hangman(failed_letters):
     if Letters >= 3:
         t.right(90)
         t.forward(200)
-    
+
     if Letters >= 4:
         t.left(180)
         t.forward(150)
@@ -52,22 +52,22 @@ def draw_hangman(failed_letters):
     if Letters >= 6:
         t.pencolor("firebrick3")
         t.circle(10)
-    
+
     if Letters >= 7:
         t.forward(55)
-    
+
     if Letters >= 8:
         t.right(45)
         t.forward(25)
         t.left(180)
         t.forward(25)
-    
+
     if Letters >= 9:
         t.right(90)
         t.forward(25)
         t.left(180)
         t.forward(25)
-    
+
     if Letters >= 10:
         t.right(45)
         t.forward(25)
@@ -76,7 +76,7 @@ def draw_hangman(failed_letters):
         t.left(180)
         t.forward(50)
 
-    
+
 def draw(word_so_far, failed_letters):
     """Draw the word so far and the hangman
 
@@ -88,7 +88,6 @@ def draw(word_so_far, failed_letters):
     t.reset()
     draw_word(word_so_far)
     draw_hangman(failed_letters)
-
 
 def get_a_letter():
     """Prompt the user to enter a letter
@@ -102,5 +101,5 @@ def get_difficulty():
     """Return a number showing how difficult
     """
     return int(t.textinput("Hangman", "How difficult?"))
-
-draw(list("Memes"),list("irrelevent") )
+if __name__=="__main__":
+    draw(list("Memes"),list("irrelevent") )
