@@ -16,9 +16,11 @@ def read_possible_words():
 def pick_a_word(words, n_letters=7):
     """Return a random word from the list of words
     of the preferred length
+
+    words -> list of valid words
+    n_letters -> how long a word to return
     """
-    #print("I don't do anything yet")
-    return random.choice([w for w in words if len(w) == n_letters])
+    print("I don't do anything yet")
 	if len(words) == n_letters:
 		
 		return words
