@@ -86,9 +86,10 @@ def draw(word_so_far, failed_letters):
       write -- writes text to the screen
     """
     t.reset()
-    draw_word(word_so_far)
+    draw_word(" ".join(word_so_far))
     draw_hangman(failed_letters)
 
+    print(word_so_far,failed_letters)
 def get_a_letter():
     """Prompt the user to enter a letter
     """

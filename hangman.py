@@ -27,9 +27,11 @@ while alive == True:
     #   If the letter is good
     if hangman_words.letter_is_good(letter, random_word):
         #      Update the word-so-far
+        print("where we landing lads")
         word_so_far = hangman_words.update_word_so_far(random_word, word_so_far, letter)
     else:
         #      Update the failed-letters
+        print("GG")
         failed_letters = hangman_words.update_failed_letters(failed_letters, letter)
 #   If the word-so-far is complete
     if list(random_word) == word_so_far:

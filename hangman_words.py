@@ -1,15 +1,19 @@
+import random
+
 def read_possible_words():
     """Return a list of words read from a file
     """
     #print("I don't do anything yet")
 
+    all_words = []
+
     with open("words.txt","r") as words_file:
 
-        for lines in words_file:
+        for word in words_file:
 
-            separate_words = lines.split()
+            all_words.append(word.strip())
 
-        return separate_words
+    return all_words
 
 
 
@@ -20,43 +24,51 @@ def pick_a_word(words, n_letters=7):
     words -> list of valid words
     n_letters -> how long a word to return
     """
-    print("I don't do anything yet")
-    if len(words) == n_letters:
-
-        return words
+    while True:
+        random_num = random.randint(0,len(words)- 1)
+        print(random_num)
+        print(words[random_num])
+        print(n_letters)
+        if len(words[random_num]) == n_letters:
+            return words[random_num]
 
 
 def letter_is_good(letter, word):
     """Return whether a letter is good or failed
     """
     #print("I don't do anything yet")
+    print(letter)
+    print(word)
+    if letter in word.upper():
+        return True
+    else:
+        print(word)
+        return False
 
-    correct = True
-    incorrect = False
 
-    word_in_letters = word.split()
 
-    for correct_letter in word:
-
-        if word_in_letters == letter:
-
-            letter_is_good = correct
-            return letter_is_good, letter
-
-        else:
-
-            letter_is_good = incorrect
-            return letter_is_good, letter
-
-def update_word_so_far(real_word, word_so_far, letter):
+def update_word_so_far(real_word, word_so_far, guessed_letter):
     """Using the word so far and the chosen letter,
     return a new version of the word so far with the
     letter in the correct places.
     """
-    #print("I don't do anything yet")
 
-    pass
+    dashed_word = ""
 
+
+    for letter_or_dash in str(real_word):
+
+        if letter_or_dash in guessed_letter:
+
+            dashed_word += guessed_letter
+
+        else:
+
+            dashed_word += "_"
+
+
+
+    return list(dashed_word)
 
 
 
@@ -68,8 +80,8 @@ def update_failed_letters(failed_letters, letter):
 
 
 
-
-
+if __name__ == "__main__":
+    read_possible_words()
 
 
 
