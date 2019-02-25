@@ -1,9 +1,9 @@
 import random
+import os, sys 
 
 def read_possible_words():
     """Return a list of words read from a file
     """
-    #print("I don't do anything yet")
 
     all_words = []
 
@@ -12,8 +12,8 @@ def read_possible_words():
         for word in words_file:
 
             all_words.append(word.strip())
-
-    return all_words
+	
+	return all_words
 
 
 
@@ -24,26 +24,29 @@ def pick_a_word(words, n_letters=7):
     words -> list of valid words
     n_letters -> how long a word to return
     """
-    while True:
-        random_num = random.randint(0,len(words)- 1)
-        print(random_num)
-        print(words[random_num])
-        print(n_letters)
-        if len(words[random_num]) == n_letters:
-            return words[random_num]
 
+    while True:
+
+        random_num = random.randint(0,len(words)- 1)
+
+        if len(words[random_num]) == n_letters:
+
+            return words[random_num]
+            break
+            
+	
 
 def letter_is_good(letter, word):
     """Return whether a letter is good or failed
     """
-    #print("I don't do anything yet")
-    print(letter)
-    print(word)
+
     if letter in word.upper():
-        return True
+		
+	    return True
+
     else:
-        print(word)
-        return False
+		
+	    return False
 
 
 
@@ -53,7 +56,7 @@ def update_word_so_far(real_word, word_so_far, guessed_letter):
     letter in the correct places.
     """
 
-    dashed_word = ""
+    dashed_word = word_so_far
 
 
     for letter_or_dash in str(real_word):
@@ -67,8 +70,7 @@ def update_word_so_far(real_word, word_so_far, guessed_letter):
             dashed_word += "_"
 
 
-
-    return list(dashed_word)
+	return list(dashed_word)
 
 
 
@@ -76,12 +78,12 @@ def update_failed_letters(failed_letters, letter):
     """Return the list of failed letters with the
     chosen letter added
     """
-    #print("I don't do anything yet")
-
-
-
+    
+    print("I don't do anything yet")
+    
+	
 if __name__ == "__main__":
-    read_possible_words()
-
+    import testfile as t
+    sys.exit(t.test())
 
 
