@@ -29,6 +29,7 @@ while alive == True:
         #      Update the word-so-far
         print("where we landing lads")
         word_so_far = hangman_words.update_word_so_far(random_word, word_so_far, letter)
+        print(type(word_so_far))
     else:
         #      Update the failed-letters
         print("GG")
