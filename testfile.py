@@ -69,7 +69,7 @@ def test():
 	except ValueError:
 		
 		clear()
-		test_menu()
+		test()
 	
 	if test == 1:
 		
@@ -115,33 +115,5 @@ def test():
 		test()
 		
 if __name__ == "__main__":
-    
-	def update_word_so_far(real_word, word_so_far, guessed_letter):
-		"""Using the word so far and the chosen letter,
-		return a new version of the word so far with the
-		letter in the correct places.
-		"""
-
-		dashed_word = word_so_far = ""
-		
-		# every_item_in_the_guessed_letters_list
-		
-		for with_letter_or_dash in range(len(real_word)):
-
-			if real_word[with_letter_or_dash] == guessed_letter:
-
-				dashed_word += guessed_letter
-
-			else:
-
-				dashed_word += "_"
-		
-
-		
-		print(list(dashed_word))
-		
-		return list(dashed_word)
-		
-	update_word_so_far("hello",[],"h")
-	
-    #sys.exit(test())
+   
+    sys.exit(test())
