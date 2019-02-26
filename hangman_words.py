@@ -7,7 +7,7 @@ def read_possible_words():
 
     all_words = []
 
-    with open("words.txt","r") as words_file:
+    with open("tommys_words.txt","r") as words_file:
 
         for word in words_file:
 
@@ -56,7 +56,6 @@ def update_word_so_far(real_word, word_so_far, guessed_letter):
     letter in the correct places.
     """
 	
-    """
     dashed_word = word_so_far = ""
 
 
@@ -73,8 +72,8 @@ def update_word_so_far(real_word, word_so_far, guessed_letter):
 	
     return list(dashed_word)
     
-    """
-	
+    
+	"""	
 
     dashed_word = word_so_far = ""
 	
@@ -89,7 +88,7 @@ def update_word_so_far(real_word, word_so_far, guessed_letter):
         else:
 
             dashed_word += "_"
-
+	"""
 
 
 def update_failed_letters(failed_letters, letter):
