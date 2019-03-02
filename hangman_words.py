@@ -72,8 +72,7 @@ def update_word_so_far(real_word, word_so_far, guessed_letter):
 	
     return list(dashed_word)
     
-    
-	"""	
+    """	
 
     dashed_word = word_so_far = ""
 	
@@ -87,7 +86,7 @@ def update_word_so_far(real_word, word_so_far, guessed_letter):
 
         else:
 
-            dashed_word += "_"
+				dashed_word += "_"
 	"""
 
 
@@ -96,23 +95,21 @@ def update_failed_letters(failed_letters, letter):
     chosen letter added
     """
      	
-    if not letter in failed_letters:
+    #if not letter in failed_letters:
  	
-        failed_letters = failed_letters.append(letter) 
+    failed_letters = [] = failed_letters.append(letter)
  	
-        return failed_letters
+    return failed_letters
  	
-    else:
+    #else:
  	
-        failed_letters = failed_letters.append(letter) 
+    #   failed_letters = failed_letters.append(letter)
  	
 		#error = "Repeated Letter !!!"
-        return failed_letters #, error
+    #    return failed_letters #, error
  	
 		# Anyway would add the letter to the list but just a interesting thing to do.
  
 if __name__ == "__main__":
     import testfile as t
     sys.exit(t.test())
-
-
