@@ -72,19 +72,17 @@ def update_word_so_far(real_word, word_so_far, guessed_letter):
 	
     return list(dashed_word)
     
-    """	
-
-    dashed_word = word_so_far = ""
+    """dashed_word = word_so_far = ""
 	
-	# every_item_in_the_guessed_letters_list
+		# every_item_in_the_guessed_letters_list
 	
-    for with_letter_or_dash in range(len(real_word)):
+		for with_letter_or_dash in range(len(real_word)):
 
-        if real_word[with_letter_or_dash] == guessed_letter:
+			if real_word[with_letter_or_dash] == guessed_letter:
 
-            dashed_word += guessed_letter
-
-        else:
+				dashed_word += guessed_letter
+	
+			else:
 
 				dashed_word += "_"
 	"""
