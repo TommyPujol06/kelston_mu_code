@@ -7,6 +7,7 @@ def draw_word(word_so_far):
     t.setpos(50,225)
     t.write(word_so_far, font=("Arial", 28, "normal"))
 
+
 def draw_hangman(failed_letters):
     Letters = len(failed_letters)
     t.penup()
@@ -85,22 +86,55 @@ def draw(word_so_far, failed_letters):
       reset -- starts again with a clear screen
       write -- writes text to the screen
     """
+    
     t.reset()
     draw_word(" ".join(word_so_far))
     draw_hangman(failed_letters)
 
-    print(word_so_far,failed_letters)
+	
+    print("Word So Far : ",word_so_far,"\nFailed Letters : ",failed_letters)
+
+	
 def get_a_letter():
     """Prompt the user to enter a letter
     """
     #
     # HINT: turtle.textinput might help
     #
-    return t.textinput("Hangman", "Set me one").upper()
+    
+    text = t.textinput("Hangman", "Set me one").upper()
+    
+    return text
 
 def get_difficulty():
     """Return a number showing how difficult
     """
+    
     return int(t.textinput("Hangman", "How difficult?"))
+
+def win_or_lose(wl):
+	"""wl means win or lose
+	"""
+	
+	
+	if wl:
+		
+		t.reset()
+		t.penup()
+		t.setpos(50,225)
+		
+		t.write("You Won !!!", font=("Arial", 28, "normal"))
+	
+	else:
+		
+		t.reset()
+		t.penup()
+		t.setpos(50,225)
+		
+		t.write("You Lost !!!", font=("Arial", 28, "normal"))
+	
+
+
 if __name__=="__main__":
+    
     draw(list("Memes"),list("irrelevent") )

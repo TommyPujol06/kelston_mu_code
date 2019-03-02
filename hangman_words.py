@@ -23,6 +23,8 @@ def pick_a_word(words, n_letters=7):
 
     words -> list of valid words
     n_letters -> how long a word to return
+    
+    rerurn a string  
     """
 
     while True:
@@ -31,13 +33,14 @@ def pick_a_word(words, n_letters=7):
 
         if len(words[random_num]) == n_letters:
 
-            return words[random_num]
-            break
+            return words[random_num].upper()
             
  
 
 def letter_is_good(letter, word):
     """Return whether a letter is good or failed
+		
+		return true or false
     """
 
     if letter in word.upper():
@@ -50,52 +53,43 @@ def letter_is_good(letter, word):
 
 
 
-def update_word_so_far(real_word, word_so_far, guessed_letter):
+def update_word_so_far(real_word, correct_guessed_letters):
     """Using the word so far and the chosen letter,
     return a new version of the word so far with the
     letter in the correct places.
+    
+    guessed_letters => Append guessed_letter
+   
+    real_word is a string and word_so_far a list 
+   
     """
+    
+    assert isinstance(real_word,str)
+    assert isinstance(correct_guessed_letters,list)
 	
-    dashed_word = word_so_far = ""
-
-
-    for letter_or_dash in str(real_word):
-
-        if letter_or_dash in guessed_letter:
-
-            dashed_word += guessed_letter
-
-        else:
-
-            dashed_word += "_"
-
+    print(real_word, correct_guessed_letters)
+	
+	
+    dashed_word = "".join(letter if letter in correct_guessed_letters else '_' for letter in real_word)
+	
+    print(dashed_word)
 	
     return list(dashed_word)
     
-    """dashed_word = word_so_far = ""
-	
-		# every_item_in_the_guessed_letters_list
-	
-		for with_letter_or_dash in range(len(real_word)):
-
-			if real_word[with_letter_or_dash] == guessed_letter:
-
-				dashed_word += guessed_letter
-	
-			else:
-
-				dashed_word += "_"
-	"""
-
-
+    
 def update_failed_letters(failed_letters, letter):
     """Return the list of failed letters with the
     chosen letter added
+    
+    failed_letters is list and letter is the failed given letter
     """
-     	
+    
+    assert isinstance(letter,str)
+    assert isinstance(failed_letters,list)
+	
     #if not letter in failed_letters:
  	
-    failed_letters = [] = failed_letters.append(letter)
+    failed_letters.append(letter)
  	
     return failed_letters
  	
@@ -109,5 +103,6 @@ def update_failed_letters(failed_letters, letter):
 		# Anyway would add the letter to the list but just a interesting thing to do.
  
 if __name__ == "__main__":
+    
     import testfile as t
     sys.exit(t.test())
