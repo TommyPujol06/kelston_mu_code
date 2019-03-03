@@ -17,7 +17,7 @@ failed_letters = []
 while True: # alive from old Davide's code 
 
     #   Draw the current position
-    print(type(failed_letters))
+    #print(type(failed_letters))
     current_pos = hangman_screen.draw(word_so_far, failed_letters)
 
     #   Ask for a letter
@@ -27,27 +27,27 @@ while True: # alive from old Davide's code
     if letter_is_good(letter, random_word):
 
         #      Update the word-so-far        
-        print("where we landing lads")
+        #print("where we landing lads")
         word_so_far.append(letter)
         word_so_far = update_word_so_far(random_word, word_so_far)
         
     else:
         
         #      Update the failed-letters
-        print("GG")
+        #print("GG")
         failed_letters = update_failed_letters(failed_letters, letter)
 
 #   If the word-so-far is complete
     if list(random_word) == word_so_far:
         hangman_screen.win_or_lose(True)
-        print("YOU WIN!")
+        #print("YOU WIN!")
         time.sleep(5)
         break
 		
 #   If the failed-letters is too many
     if len(failed_letters) == hangman_screen.NUMBER_TO_FAIL:
         hangman_screen.win_or_lose(False)
-        print("YOU LOSE!")
+        #print("YOU LOSE!")
         time.sleep(5)
         break
 #      "You Lose!"

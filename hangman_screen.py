@@ -92,7 +92,7 @@ def draw(word_so_far, failed_letters):
     draw_hangman(failed_letters)
 
 	
-    print("Word So Far : ",word_so_far,"\nFailed Letters : ",failed_letters)
+    #print("Word So Far : ",word_so_far,"\nFailed Letters : ",failed_letters)
 
 	
 def get_a_letter():

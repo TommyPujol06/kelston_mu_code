@@ -22,7 +22,8 @@ elif n < 10:
 elif n == 10:
     print("perfect")
     loop
-   else n < 10
+else:
+	print("Not sure")
 
 
 

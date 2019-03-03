@@ -64,15 +64,12 @@ def update_word_so_far(real_word, correct_guessed_letters):
    
     """
     
-    assert isinstance(real_word,str)
-    assert isinstance(correct_guessed_letters,list)
-	
-    print(real_word, correct_guessed_letters)
+    #print(real_word, correct_guessed_letters)
 	
 	
     dashed_word = "".join(letter if letter in correct_guessed_letters else '_' for letter in real_word)
 	
-    print(dashed_word)
+    #print(dashed_word)
 	
     return list(dashed_word)
     
@@ -84,9 +81,6 @@ def update_failed_letters(failed_letters, letter):
     failed_letters is list and letter is the failed given letter
     """
     
-    assert isinstance(letter,str)
-    assert isinstance(failed_letters,list)
-	
     #if not letter in failed_letters:
  	
     failed_letters.append(letter)
